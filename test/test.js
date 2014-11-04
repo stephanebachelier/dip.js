@@ -21,4 +21,9 @@ describe('dip test suite', function () {
     expect(dip.get('foo')).to.equal('bar');
     done();
   });
+
+  it('should set the value in the store', function () {
+    dip.set('john', 'doe');
+    expect(dip.get('john')).to.equal('doe');
+  });
 });
