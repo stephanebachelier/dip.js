@@ -5,6 +5,7 @@ describe('dip test suite', function () {
   'use strict';
 
   var store;
+  var dip;
 
   before(function () {
     store = {
@@ -12,10 +13,12 @@ describe('dip test suite', function () {
     };
   });
 
-  it('should return the correct value on get', function (done) {
-    var _dip = new Dip({store: store});
+  beforeEach(function () {
+    dip = new Dip({store: store});
+  });
 
-    expect(_dip.get('foo')).to.equal('bar');
+  it('should return the correct value on get', function (done) {
+    expect(dip.get('foo')).to.equal('bar');
     done();
   });
 });
