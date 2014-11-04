@@ -1,4 +1,4 @@
-var dip = require('../lib/dip');
+var Dip = require('../lib/dip');
 var expect = require('chai').expect;
 
 describe('dip test suite', function () {
@@ -9,7 +9,7 @@ describe('dip test suite', function () {
       foo: 'bar'
     };
 
-    var _dip = new dip({store: store});
+    var _dip = new Dip({store: store});
 
     expect(_dip.get('foo')).to.equal('bar');
     done();
