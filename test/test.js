@@ -12,7 +12,7 @@ describe('dip test suite', function () {
     };
   });
 
-  it('should ...', function (done) {
+  it('should return the correct value on get', function (done) {
     var _dip = new Dip({store: store});
 
     expect(_dip.get('foo')).to.equal('bar');
