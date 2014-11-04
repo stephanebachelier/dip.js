@@ -1,0 +1,23 @@
+{
+  "name": "dip.js",
+  "version": "0.0.0",
+  "description": "Dependency Injection Promise based",
+  "main": "dist/dip.js",
+  "author": {
+    "name": "Stéphane Bachelier",
+    "email": "stephane.bachelier@gmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/stephanebachelier/dip.js.git",
+    "type": "git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
