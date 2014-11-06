@@ -12,11 +12,11 @@ describe('dip test suite', function () {
   });
 
   it('should return a promise on get', function () {
-    expect(dip.get('foo').then).to.be.a('function');
+    expect(dip.getItem('foo').then).to.be.a('function');
   });
 
   it('should return a promise on set', function () {
-    expect(dip.set().then).to.be.a('function');
+    expect(dip.setItem().then).to.be.a('function');
   });
 
   it('should return the correct value on get', function (done) {
@@ -25,15 +25,15 @@ describe('dip test suite', function () {
       value: 'bar'
     };
 
-    dip.get('foo').then(function (value) {
+    dip.getItem('foo').then(function (value) {
       expect(value).to.equal('bar');
       done();
     });
   });
 
   it('should set the value in the store', function (done) {
-    dip.set('john', 'doe');
-    dip.get('john').then(function (value) {
+    dip.setItem('john', 'doe');
+    dip.getItem('john').then(function (value) {
       expect(value).to.equal('doe');
       done();
     });
