@@ -8,13 +8,22 @@
     <script src="../node_modules/mocha/mocha.js"></script>
 
     <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/chai-as-promised/lib/chai-as-promised.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../node_modules/bluebird/js/browser/bluebird.js"></script>
     <script src="../lib/dip.js"></script>
   </head>
   <body>
     <div id="mocha"></div>
     <script>
-      window.expect = chai.expect;
+      window.chai = chai;
+      window.should = chai.should();
       mocha.setup('bdd');
+      Promise.longStackTraces();
+      Promise.onUnhandledRejectionHandled(function (e) {
+        'use strict';
+        console.error(e.stack);
+      });
     </script>
     <script src="spec/di.spec.js"></script>
     <script>
