@@ -1,6 +1,6 @@
 {
   "name": "dip.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Dependency Injection Promise based",
   "main": "dist/dip.js",
   "author": {
