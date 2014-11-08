@@ -15,8 +15,12 @@
   "dependencies": {},
   "ignore": [
     "**/.*",
+    "Gruntfile.js",
+    "lib",
     "node_modules",
     "bower_components",
+    "package.json",
+    "tasks",
     "test",
     "tests"
   ]
