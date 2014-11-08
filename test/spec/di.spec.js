@@ -60,5 +60,37 @@ describe('dip test suite', function () {
         dip.getItem('john').should.eventually.equal('doe').notify(done);
       });
     });
+
+    it('should reject on null key', function (done) {
+      var resolvedFn = sinon.spy();
+      var rejectedFn = sinon.spy();
+
+      dip.setItem(null, 'foo')
+        .then(resolvedFn)
+        .catch(function () {
+          rejectedFn();
+        })
+        .then(function () {
+          resolvedFn.called.should.be.false;
+          rejectedFn.called.should.be.true;
+          done();
+        });
+
+    });
+
+    it('should reject on undefined key', function (done) {
+      var resolvedFn = sinon.spy();
+      var rejectedFn = sinon.spy();
+
+      // equivalent to dip.getItem(), but explained here for documentation purpose
+      dip.getItem(undefined, 'foo')
+        .then(resolvedFn)
+        .catch(rejectedFn)
+        .then(function () {
+          resolvedFn.called.should.be.false;
+          rejectedFn.called.should.be.true;
+          done();
+        });
+    });
   });
 });
